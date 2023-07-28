@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red-color : hsl(0, 78%, 62%) ;
+    --cyan-color : hsl(180, 62%, 55%);
+    --orange-color : hsl(34, 97%, 64%);
+    --blue-color : hsl(212, 86%, 64%);
+    --fist-p: hsl(234, 12%, 34%);
+    --second-p : hsl(229, 6%, 66%);
+    --third-p : hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    
+}
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--second-p);
+    width: 1000px;
+    padding: 25px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.container .content {
+    text-align: center;
+}
+.container .content h3 {
+    color: var(--second-p);
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+.container .content h2 {
+    color: var(--fist-p-p);
+    margin-bottom: 15px;
+
+}
+.container .content p.p-one {
+    width: 500px;
+    margin: 0 auto 10px auto;
+    color: var(--third-p);
+    font-weight: lighter;
+}
+
+.container .cards {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    /* grid-template-rows: repeat(5 , auto); */
+    gap: 15px;
+}
+
+
+
+/* using flex box */
+.container .cards .divs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.container .cards .card-one , 
+.container .cards .card-four {
+    align-self: center;
+}
+/* end of flex box */
+
+
+
+.container .cards .card-one ,
+.container .cards .card-two ,
+.container .cards .card-three ,
+.container .cards .card-four {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: tan;
+}
+.container .cards .card-one p,
+.container .cards .card-two p,
+.container .cards .card-three p,
+.container .cards .card-four p{
+    color: var(--third-p);
+    font-weight: lighter;
+    margin-bottom: 25px;
+}
+.container .cards .card-one .img,
+.container .cards .card-two .img,
+.container .cards .card-three .img,
+.container .cards .card-four .img {
+
+    text-align: right;
+}
+/* using grid columns and rows */
+
+/* .container .cards .card-one {
+    grid-column: 1 / 2 ;
+    grid-row : 2/4 ;
+    border-top: 6px solid var(--cyan-color);
+}
+.container .cards .card-two {
+    grid-column: 2 / 3 ;
+    grid-row : 1/3 ;
+    border-top: 6px solid var(--red-color);
+
+}
+.container .cards .card-four {
+    grid-column: 3 / 4 ;
+    grid-row : 2/4 ;
+    border-top: 6px solid var(--orange-color);
+
+}
+.container .cards .card-three {
+    grid-column: 2 / 3 ;
+    grid-row : 3/5;
+    border-top: 6px solid var(--blue-color);
+
+} */
+
+@media only screen and (max-width : 768px) {
+    .container .cards {
+        grid-template-columns: 1fr;
+    }
+    .container .content p.p-one {
+        width: auto;
+        margin-bottom: 40px;
+    }
+    .container {
+        width: 80%;
+        margin: 30px auto;
+    }
+}
+
+/* 
+@media only screen and (max-width : 725px) {
+    .container .content p.p-one {
+        width: auto;
+        margin-bottom: 40px;
+    }
+    .container {
+        width: 80%;
+        margin: 30px auto;
+    }
+    .container .cards {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .container .cards .card-one {
+        grid-column: 1/2;
+        grid-row: 1/2
+    }
+    .container .cards .card-two {
+        grid-column: 1 /2 ;
+        grid-row: 2/3;
+    }
+    .container .cards .card-four {
+        grid-column: 1 /2 ;
+        grid-row: 3/4;
+    }
+    .container .cards .card-three {
+        grid-column: 1 /2 ;
+        grid-row: 4/5;
+    }
+} */
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four card feature section</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="section">
+        <div class="container">
+            <div class="content">
+                <h3>Reliable, efficient delivery</h3>
+                <h2>Powered by Technology</h2>
+                <p class="p-one">Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is successful </p>
+            </div>
+            <div class="cards">
+                <div class="card-one">
+                    <h2>Supervisor</h2>
+                    <p>Monitors activity to identify project roadblocks</p>
+                    <div class="img">
+                        <img src="images/icon-supervisor.svg" alt="">
+                    </div>
+                </div>
+                <div class="divs">
+                    <div class="card-two">
+                        <h2>Team</h2>
+                        <p>Builder Scans our talent network to create the optimal team for your project</p>
+                        <div class="img">
+                            <img src="images/icon-team-builder.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card-three">
+                        <h2>Karma</h2>
+                        <p>Regularly evaluates our talent to ensure quality</p>
+                        <div class="img">
+                            <img src="images/icon-karma.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card-two">
+                    <h2>Team</h2>
+                    <p>Builder Scans our talent network to create the optimal team for your project</p>
+                    <div class="img">
+                        <img src="images/icon-team-builder.svg" alt="">
+                    </div>
+                </div>
+                <div class="card-three">
+                    <h2>Karma</h2>
+                    <p>Regularly evaluates our talent to ensure quality</p>
+                    <div class="img">
+                        <img src="images/icon-karma.svg" alt="">
+                    </div>
+                </div> -->
+                <div class="card-four">
+                    <h2>Calculator</h2>
+                    <p>Uses data from past projects to provide better delivery estimates</p>
+                    <div class="img">
+                        <img src="images/icon-calculator.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+</body>
+</html>
